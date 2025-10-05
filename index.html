@@ -457,14 +457,14 @@
                 <h2><i class="fas fa-file-contract"></i> Saisie des Baux</h2>
                 
                 <div class="employee-tabs">
-                    <div class="tab active" data-tab="employe1">Kyle Miller</div>
-                    <div class="tab" data-tab="employe2">Adaam Pooks</div>
-                    <div class="tab" data-tab="employe3">Mid Cost</div>
-                    <div class="tab" data-tab="employe4">Groovestet</div>
-                    <div class="tab" data-tab="employe5">PSO</div>
+                    <div class="tab active" data-tab="employe1">Employé 1</div>
+                    <div class="tab" data-tab="employe2">Employé 2</div>
+                    <div class="tab" data-tab="employe3">Employé 3</div>
+                    <div class="tab" data-tab="employe4">Employé 4</div>
+                    <div class="tab" data-tab="employe5">Employé 5</div>
                 </div>
 
-                <!-- Contenu pour Kyle Miller -->
+                <!-- Contenu pour Employé 1 -->
                 <div id="employe1" class="tab-content active">
                     <div class="form-grid">
                         <div class="form-group">
@@ -535,7 +535,7 @@
                     </div>
                     
                     <div class="results">
-                        <h3>Résultats pour Kyle Miller</h3>
+                        <h3>Résultats pour Employé 1</h3>
                         <div class="result-item">
                             <span>Chiffre d'Affaires:</span>
                             <span id="ca-result1" class="result-value ca-value">0 €</span>
@@ -562,24 +562,396 @@
                     </div>
                 </div>
 
-                <!-- Contenu pour Adaam Pooks -->
+                <!-- Contenu pour Employé 2 -->
                 <div id="employe2" class="tab-content">
-                    <!-- Même structure que employe1 avec les IDs adaptés -->
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="date2">Date de création du bail</label>
+                            <input type="date" id="date2">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="client2">Client / Locataire</label>
+                            <input type="text" id="client2" placeholder="Nom du client">
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="interieur2">Intérieur choisi</label>
+                            <input type="text" id="interieur2" placeholder="Description de l'intérieur">
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="rue2">Rue du bien</label>
+                            <input type="text" id="rue2" placeholder="Adresse du bien">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="garages2">Nombre de garages</label>
+                            <select id="garages2">
+                                <option value="0">0</option>
+                                <option value="2">2</option>
+                                <option value="4">4</option>
+                                <option value="6">6</option>
+                                <option value="12">12</option>
+                                <option value="24">24</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ca2">Chiffre d'Affaires (€)</label>
+                            <input type="number" id="ca2" min="0" step="0.01" placeholder="Montant du CA">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reduction2">Réduction (€)</label>
+                            <input type="number" id="reduction2" min="0" step="0.01" placeholder="0" value="0">
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <div class="checkbox-group important">
+                                <input type="checkbox" id="resilie2">
+                                <label for="resilie2">Bail résilié</label>
+                            </div>
+                            
+                            <div class="checkbox-group validated">
+                                <input type="checkbox" id="valide2">
+                                <label for="valide2">Validé par le patron</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="actions">
+                        <button class="btn btn-primary" onclick="enregistrerBail(2)">
+                            <i class="fas fa-save"></i> Enregistrer le bail
+                        </button>
+                        <button class="btn btn-success" onclick="calculerBenefice(2)">
+                            <i class="fas fa-calculator"></i> Calculer
+                        </button>
+                        <button class="btn btn-warning" onclick="reinitialiserFormulaire(2)">
+                            <i class="fas fa-redo"></i> Nouveau
+                        </button>
+                    </div>
+                    
+                    <div class="results">
+                        <h3>Résultats pour Employé 2</h3>
+                        <div class="result-item">
+                            <span>Chiffre d'Affaires:</span>
+                            <span id="ca-result2" class="result-value ca-value">0 €</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Réduction:</span>
+                            <span id="reduction-result2" class="result-value reduction-value">0 €</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Bénéfice:</span>
+                            <span id="benefice2" class="result-value benefice-value">0 €</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Statut:</span>
+                            <span id="statut2" class="badge warning">En cours</span>
+                        </div>
+                    </div>
+                    
+                    <div class="history-section">
+                        <h3><i class="fas fa-history"></i> Historique des baux</h3>
+                        <div id="history2">
+                            <div class="empty-history">Aucun bail enregistré pour le moment</div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Contenu pour Mid Cost -->
+                <!-- Contenu pour Employé 3 -->
                 <div id="employe3" class="tab-content">
-                    <!-- Même structure que employe1 avec les IDs adaptés -->
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="date3">Date de création du bail</label>
+                            <input type="date" id="date3">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="client3">Client / Locataire</label>
+                            <input type="text" id="client3" placeholder="Nom du client">
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="interieur3">Intérieur choisi</label>
+                            <input type="text" id="interieur3" placeholder="Description de l'intérieur">
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="rue3">Rue du bien</label>
+                            <input type="text" id="rue3" placeholder="Adresse du bien">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="garages3">Nombre de garages</label>
+                            <select id="garages3">
+                                <option value="0">0</option>
+                                <option value="2">2</option>
+                                <option value="4">4</option>
+                                <option value="6">6</option>
+                                <option value="12">12</option>
+                                <option value="24">24</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ca3">Chiffre d'Affaires (€)</label>
+                            <input type="number" id="ca3" min="0" step="0.01" placeholder="Montant du CA">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reduction3">Réduction (€)</label>
+                            <input type="number" id="reduction3" min="0" step="0.01" placeholder="0" value="0">
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <div class="checkbox-group important">
+                                <input type="checkbox" id="resilie3">
+                                <label for="resilie3">Bail résilié</label>
+                            </div>
+                            
+                            <div class="checkbox-group validated">
+                                <input type="checkbox" id="valide3">
+                                <label for="valide3">Validé par le patron</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="actions">
+                        <button class="btn btn-primary" onclick="enregistrerBail(3)">
+                            <i class="fas fa-save"></i> Enregistrer le bail
+                        </button>
+                        <button class="btn btn-success" onclick="calculerBenefice(3)">
+                            <i class="fas fa-calculator"></i> Calculer
+                        </button>
+                        <button class="btn btn-warning" onclick="reinitialiserFormulaire(3)">
+                            <i class="fas fa-redo"></i> Nouveau
+                        </button>
+                    </div>
+                    
+                    <div class="results">
+                        <h3>Résultats pour Employé 3</h3>
+                        <div class="result-item">
+                            <span>Chiffre d'Affaires:</span>
+                            <span id="ca-result3" class="result-value ca-value">0 €</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Réduction:</span>
+                            <span id="reduction-result3" class="result-value reduction-value">0 €</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Bénéfice:</span>
+                            <span id="benefice3" class="result-value benefice-value">0 €</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Statut:</span>
+                            <span id="statut3" class="badge warning">En cours</span>
+                        </div>
+                    </div>
+                    
+                    <div class="history-section">
+                        <h3><i class="fas fa-history"></i> Historique des baux</h3>
+                        <div id="history3">
+                            <div class="empty-history">Aucun bail enregistré pour le moment</div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Contenu pour Groovestet -->
+                <!-- Contenu pour Employé 4 -->
                 <div id="employe4" class="tab-content">
-                    <!-- Même structure que employe1 avec les IDs adaptés -->
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="date4">Date de création du bail</label>
+                            <input type="date" id="date4">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="client4">Client / Locataire</label>
+                            <input type="text" id="client4" placeholder="Nom du client">
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="interieur4">Intérieur choisi</label>
+                            <input type="text" id="interieur4" placeholder="Description de l'intérieur">
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="rue4">Rue du bien</label>
+                            <input type="text" id="rue4" placeholder="Adresse du bien">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="garages4">Nombre de garages</label>
+                            <select id="garages4">
+                                <option value="0">0</option>
+                                <option value="2">2</option>
+                                <option value="4">4</option>
+                                <option value="6">6</option>
+                                <option value="12">12</option>
+                                <option value="24">24</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ca4">Chiffre d'Affaires (€)</label>
+                            <input type="number" id="ca4" min="0" step="0.01" placeholder="Montant du CA">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reduction4">Réduction (€)</label>
+                            <input type="number" id="reduction4" min="0" step="0.01" placeholder="0" value="0">
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <div class="checkbox-group important">
+                                <input type="checkbox" id="resilie4">
+                                <label for="resilie4">Bail résilié</label>
+                            </div>
+                            
+                            <div class="checkbox-group validated">
+                                <input type="checkbox" id="valide4">
+                                <label for="valide4">Validé par le patron</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="actions">
+                        <button class="btn btn-primary" onclick="enregistrerBail(4)">
+                            <i class="fas fa-save"></i> Enregistrer le bail
+                        </button>
+                        <button class="btn btn-success" onclick="calculerBenefice(4)">
+                            <i class="fas fa-calculator"></i> Calculer
+                        </button>
+                        <button class="btn btn-warning" onclick="reinitialiserFormulaire(4)">
+                            <i class="fas fa-redo"></i> Nouveau
+                        </button>
+                    </div>
+                    
+                    <div class="results">
+                        <h3>Résultats pour Employé 4</h3>
+                        <div class="result-item">
+                            <span>Chiffre d'Affaires:</span>
+                            <span id="ca-result4" class="result-value ca-value">0 €</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Réduction:</span>
+                            <span id="reduction-result4" class="result-value reduction-value">0 €</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Bénéfice:</span>
+                            <span id="benefice4" class="result-value benefice-value">0 €</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Statut:</span>
+                            <span id="statut4" class="badge warning">En cours</span>
+                        </div>
+                    </div>
+                    
+                    <div class="history-section">
+                        <h3><i class="fas fa-history"></i> Historique des baux</h3>
+                        <div id="history4">
+                            <div class="empty-history">Aucun bail enregistré pour le moment</div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Contenu pour PSO -->
+                <!-- Contenu pour Employé 5 -->
                 <div id="employe5" class="tab-content">
-                    <!-- Même structure que employe1 avec les IDs adaptés -->
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="date5">Date de création du bail</label>
+                            <input type="date" id="date5">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="client5">Client / Locataire</label>
+                            <input type="text" id="client5" placeholder="Nom du client">
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="interieur5">Intérieur choisi</label>
+                            <input type="text" id="interieur5" placeholder="Description de l'intérieur">
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="rue5">Rue du bien</label>
+                            <input type="text" id="rue5" placeholder="Adresse du bien">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="garages5">Nombre de garages</label>
+                            <select id="garages5">
+                                <option value="0">0</option>
+                                <option value="2">2</option>
+                                <option value="4">4</option>
+                                <option value="6">6</option>
+                                <option value="12">12</option>
+                                <option value="24">24</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ca5">Chiffre d'Affaires (€)</label>
+                            <input type="number" id="ca5" min="0" step="0.01" placeholder="Montant du CA">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reduction5">Réduction (€)</label>
+                            <input type="number" id="reduction5" min="0" step="0.01" placeholder="0" value="0">
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <div class="checkbox-group important">
+                                <input type="checkbox" id="resilie5">
+                                <label for="resilie5">Bail résilié</label>
+                            </div>
+                            
+                            <div class="checkbox-group validated">
+                                <input type="checkbox" id="valide5">
+                                <label for="valide5">Validé par le patron</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="actions">
+                        <button class="btn btn-primary" onclick="enregistrerBail(5)">
+                            <i class="fas fa-save"></i> Enregistrer le bail
+                        </button>
+                        <button class="btn btn-success" onclick="calculerBenefice(5)">
+                            <i class="fas fa-calculator"></i> Calculer
+                        </button>
+                        <button class="btn btn-warning" onclick="reinitialiserFormulaire(5)">
+                            <i class="fas fa-redo"></i> Nouveau
+                        </button>
+                    </div>
+                    
+                    <div class="results">
+                        <h3>Résultats pour Employé 5</h3>
+                        <div class="result-item">
+                            <span>Chiffre d'Affaires:</span>
+                            <span id="ca-result5" class="result-value ca-value">0 €</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Réduction:</span>
+                            <span id="reduction-result5" class="result-value reduction-value">0 €</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Bénéfice:</span>
+                            <span id="benefice5" class="result-value benefice-value">0 €</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Statut:</span>
+                            <span id="statut5" class="badge warning">En cours</span>
+                        </div>
+                    </div>
+                    
+                    <div class="history-section">
+                        <h3><i class="fas fa-history"></i> Historique des baux</h3>
+                        <div id="history5">
+                            <div class="empty-history">Aucun bail enregistré pour le moment</div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
