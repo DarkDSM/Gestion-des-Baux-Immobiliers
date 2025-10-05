@@ -440,7 +440,7 @@
             .form-grid {
                 grid-template-columns: 1fr;
             }
-
+            
             .dashboard {
                 grid-template-columns: 1fr;
             }
@@ -450,11 +450,11 @@
             .employee-tabs {
                 flex-direction: column;
             }
-
+            
             .actions {
                 flex-direction: column;
             }
-
+            
             .action-buttons {
                 flex-direction: column;
             }
@@ -472,10 +472,9 @@
         <div class="dashboard">
             <div class="card">
                 <h2><i class="fas fa-file-contract"></i> Saisie des Baux</h2>
-
+                
                 <div class="employee-tabs">
-                    <div class="tab active" data-tab="employe1">Kyle Miller</div>
-                    <div class="tab active" data-tab="KyleMiller">Kyle Miller</div>
+                    <div class="tab active" data-tab="employe1">Employé 1</div>
                     <div class="tab" data-tab="employe2">Employé 2</div>
                     <div class="tab" data-tab="employe3">Employé 3</div>
                     <div class="tab" data-tab="employe4">Employé 4</div>
@@ -484,16 +483,79 @@
 
                 <!-- Contenu pour Employé 1 -->
                 <div id="employe1" class="tab-content active">
-                <div id="KyleMiller" class="tab-content active">
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="date1">Date de création du bail</label>
-@@ -555,872 +555,872 @@
+                            <input type="date" id="date1">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="client1">Client / Locataire</label>
+                            <input type="text" id="client1" placeholder="Nom du client">
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="interieur1">Intérieur choisi</label>
+                            <input type="text" id="interieur1" placeholder="Description de l'intérieur">
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="rue1">Rue du bien</label>
+                            <input type="text" id="rue1" placeholder="Adresse du bien">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="garages1">Nombre de garages</label>
+                            <select id="garages1">
+                                <option value="0">0</option>
+                                <option value="2">2</option>
+                                <option value="4">4</option>
+                                <option value="6">6</option>
+                                <option value="12">12</option>
+                                <option value="24">24</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ca1">Chiffre d'Affaires ($)</label>
+                            <input type="number" id="ca1" min="0" step="0.01" placeholder="Montant du CA">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reduction1">Réduction (%)</label>
+                            <div class="percentage-input">
+                                <input type="number" id="reduction1" min="0" max="100" step="0.1" placeholder="0" value="0">
+                                <span class="percentage-symbol">%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <div class="checkbox-group important">
+                                <input type="checkbox" id="resilie1">
+                                <label for="resilie1">Bail résilié</label>
+                            </div>
+                            
+                            <div class="checkbox-group validated">
+                                <input type="checkbox" id="valide1">
+                                <label for="valide1">Validé par le patron</label>
+                            </div>
+                        </div>
                     </div>
-
+                    
+                    <div class="actions">
+                        <button class="btn btn-primary" onclick="enregistrerBail(1)">
+                            <i class="fas fa-save"></i> Enregistrer le bail
+                        </button>
+                        <button class="btn btn-success" onclick="calculerBenefice(1)">
+                            <i class="fas fa-calculator"></i> Calculer
+                        </button>
+                        <button class="btn btn-warning" onclick="reinitialiserFormulaire(1)">
+                            <i class="fas fa-redo"></i> Nouveau
+                        </button>
+                    </div>
+                    
                     <div class="results">
                         <h3>Résultats pour Employé 1</h3>
-                        <h3>Résultats pour Kyle Miller</h3>
                         <div class="result-item">
                             <span>Chiffre d'Affaires:</span>
                             <span id="ca-result1" class="result-value ca-value">0 $</span>
@@ -511,7 +573,7 @@
                             <span id="statut1" class="badge warning">En cours</span>
                         </div>
                     </div>
-
+                    
                     <div class="history-section">
                         <h3><i class="fas fa-history"></i> Historique des baux</h3>
                         <div id="history1">
@@ -527,22 +589,22 @@
                             <label for="date2">Date de création du bail</label>
                             <input type="date" id="date2">
                         </div>
-
+                        
                         <div class="form-group">
                             <label for="client2">Client / Locataire</label>
                             <input type="text" id="client2" placeholder="Nom du client">
                         </div>
-
+                        
                         <div class="form-group full-width">
                             <label for="interieur2">Intérieur choisi</label>
                             <input type="text" id="interieur2" placeholder="Description de l'intérieur">
                         </div>
-
+                        
                         <div class="form-group full-width">
                             <label for="rue2">Rue du bien</label>
                             <input type="text" id="rue2" placeholder="Adresse du bien">
                         </div>
-
+                        
                         <div class="form-group">
                             <label for="garages2">Nombre de garages</label>
                             <select id="garages2">
@@ -554,12 +616,12 @@
                                 <option value="24">24</option>
                             </select>
                         </div>
-
+                        
                         <div class="form-group">
                             <label for="ca2">Chiffre d'Affaires ($)</label>
                             <input type="number" id="ca2" min="0" step="0.01" placeholder="Montant du CA">
                         </div>
-
+                        
                         <div class="form-group">
                             <label for="reduction2">Réduction (%)</label>
                             <div class="percentage-input">
@@ -567,20 +629,20 @@
                                 <span class="percentage-symbol">%</span>
                             </div>
                         </div>
-
+                        
                         <div class="form-group full-width">
                             <div class="checkbox-group important">
                                 <input type="checkbox" id="resilie2">
                                 <label for="resilie2">Bail résilié</label>
                             </div>
-
+                            
                             <div class="checkbox-group validated">
                                 <input type="checkbox" id="valide2">
                                 <label for="valide2">Validé par le patron</label>
                             </div>
                         </div>
                     </div>
-
+                    
                     <div class="actions">
                         <button class="btn btn-primary" onclick="enregistrerBail(2)">
                             <i class="fas fa-save"></i> Enregistrer le bail
@@ -592,7 +654,7 @@
                             <i class="fas fa-redo"></i> Nouveau
                         </button>
                     </div>
-
+                    
                     <div class="results">
                         <h3>Résultats pour Employé 2</h3>
                         <div class="result-item">
@@ -612,7 +674,7 @@
                             <span id="statut2" class="badge warning">En cours</span>
                         </div>
                     </div>
-
+                    
                     <div class="history-section">
                         <h3><i class="fas fa-history"></i> Historique des baux</h3>
                         <div id="history2">
@@ -628,22 +690,22 @@
                             <label for="date3">Date de création du bail</label>
                             <input type="date" id="date3">
                         </div>
-
+                        
                         <div class="form-group">
                             <label for="client3">Client / Locataire</label>
                             <input type="text" id="client3" placeholder="Nom du client">
                         </div>
-
+                        
                         <div class="form-group full-width">
                             <label for="interieur3">Intérieur choisi</label>
                             <input type="text" id="interieur3" placeholder="Description de l'intérieur">
                         </div>
-
+                        
                         <div class="form-group full-width">
                             <label for="rue3">Rue du bien</label>
                             <input type="text" id="rue3" placeholder="Adresse du bien">
                         </div>
-
+                        
                         <div class="form-group">
                             <label for="garages3">Nombre de garages</label>
                             <select id="garages3">
@@ -655,12 +717,12 @@
                                 <option value="24">24</option>
                             </select>
                         </div>
-
+                        
                         <div class="form-group">
                             <label for="ca3">Chiffre d'Affaires ($)</label>
                             <input type="number" id="ca3" min="0" step="0.01" placeholder="Montant du CA">
                         </div>
-
+                        
                         <div class="form-group">
                             <label for="reduction3">Réduction (%)</label>
                             <div class="percentage-input">
@@ -668,20 +730,20 @@
                                 <span class="percentage-symbol">%</span>
                             </div>
                         </div>
-
+                        
                         <div class="form-group full-width">
                             <div class="checkbox-group important">
                                 <input type="checkbox" id="resilie3">
                                 <label for="resilie3">Bail résilié</label>
                             </div>
-
+                            
                             <div class="checkbox-group validated">
                                 <input type="checkbox" id="valide3">
                                 <label for="valide3">Validé par le patron</label>
                             </div>
                         </div>
                     </div>
-
+                    
                     <div class="actions">
                         <button class="btn btn-primary" onclick="enregistrerBail(3)">
                             <i class="fas fa-save"></i> Enregistrer le bail
@@ -693,7 +755,7 @@
                             <i class="fas fa-redo"></i> Nouveau
                         </button>
                     </div>
-
+                    
                     <div class="results">
                         <h3>Résultats pour Employé 3</h3>
                         <div class="result-item">
@@ -713,7 +775,7 @@
                             <span id="statut3" class="badge warning">En cours</span>
                         </div>
                     </div>
-
+                    
                     <div class="history-section">
                         <h3><i class="fas fa-history"></i> Historique des baux</h3>
                         <div id="history3">
@@ -729,22 +791,22 @@
                             <label for="date4">Date de création du bail</label>
                             <input type="date" id="date4">
                         </div>
-
+                        
                         <div class="form-group">
                             <label for="client4">Client / Locataire</label>
                             <input type="text" id="client4" placeholder="Nom du client">
                         </div>
-
+                        
                         <div class="form-group full-width">
                             <label for="interieur4">Intérieur choisi</label>
                             <input type="text" id="interieur4" placeholder="Description de l'intérieur">
                         </div>
-
+                        
                         <div class="form-group full-width">
                             <label for="rue4">Rue du bien</label>
                             <input type="text" id="rue4" placeholder="Adresse du bien">
                         </div>
-
+                        
                         <div class="form-group">
                             <label for="garages4">Nombre de garages</label>
                             <select id="garages4">
@@ -756,12 +818,12 @@
                                 <option value="24">24</option>
                             </select>
                         </div>
-
+                        
                         <div class="form-group">
                             <label for="ca4">Chiffre d'Affaires ($)</label>
                             <input type="number" id="ca4" min="0" step="0.01" placeholder="Montant du CA">
                         </div>
-
+                        
                         <div class="form-group">
                             <label for="reduction4">Réduction (%)</label>
                             <div class="percentage-input">
@@ -769,20 +831,20 @@
                                 <span class="percentage-symbol">%</span>
                             </div>
                         </div>
-
+                        
                         <div class="form-group full-width">
                             <div class="checkbox-group important">
                                 <input type="checkbox" id="resilie4">
                                 <label for="resilie4">Bail résilié</label>
                             </div>
-
+                            
                             <div class="checkbox-group validated">
                                 <input type="checkbox" id="valide4">
                                 <label for="valide4">Validé par le patron</label>
                             </div>
                         </div>
                     </div>
-
+                    
                     <div class="actions">
                         <button class="btn btn-primary" onclick="enregistrerBail(4)">
                             <i class="fas fa-save"></i> Enregistrer le bail
@@ -794,7 +856,7 @@
                             <i class="fas fa-redo"></i> Nouveau
                         </button>
                     </div>
-
+                    
                     <div class="results">
                         <h3>Résultats pour Employé 4</h3>
                         <div class="result-item">
@@ -814,7 +876,7 @@
                             <span id="statut4" class="badge warning">En cours</span>
                         </div>
                     </div>
-
+                    
                     <div class="history-section">
                         <h3><i class="fas fa-history"></i> Historique des baux</h3>
                         <div id="history4">
@@ -830,22 +892,22 @@
                             <label for="date5">Date de création du bail</label>
                             <input type="date" id="date5">
                         </div>
-
+                        
                         <div class="form-group">
                             <label for="client5">Client / Locataire</label>
                             <input type="text" id="client5" placeholder="Nom du client">
                         </div>
-
+                        
                         <div class="form-group full-width">
                             <label for="interieur5">Intérieur choisi</label>
                             <input type="text" id="interieur5" placeholder="Description de l'intérieur">
                         </div>
-
+                        
                         <div class="form-group full-width">
                             <label for="rue5">Rue du bien</label>
                             <input type="text" id="rue5" placeholder="Adresse du bien">
                         </div>
-
+                        
                         <div class="form-group">
                             <label for="garages5">Nombre de garages</label>
                             <select id="garages5">
@@ -857,12 +919,12 @@
                                 <option value="24">24</option>
                             </select>
                         </div>
-
+                        
                         <div class="form-group">
                             <label for="ca5">Chiffre d'Affaires ($)</label>
                             <input type="number" id="ca5" min="0" step="0.01" placeholder="Montant du CA">
                         </div>
-
+                        
                         <div class="form-group">
                             <label for="reduction5">Réduction (%)</label>
                             <div class="percentage-input">
@@ -870,20 +932,20 @@
                                 <span class="percentage-symbol">%</span>
                             </div>
                         </div>
-
+                        
                         <div class="form-group full-width">
                             <div class="checkbox-group important">
                                 <input type="checkbox" id="resilie5">
                                 <label for="resilie5">Bail résilié</label>
                             </div>
-
+                            
                             <div class="checkbox-group validated">
                                 <input type="checkbox" id="valide5">
                                 <label for="valide5">Validé par le patron</label>
                             </div>
                         </div>
                     </div>
-
+                    
                     <div class="actions">
                         <button class="btn btn-primary" onclick="enregistrerBail(5)">
                             <i class="fas fa-save"></i> Enregistrer le bail
@@ -895,7 +957,7 @@
                             <i class="fas fa-redo"></i> Nouveau
                         </button>
                     </div>
-
+                    
                     <div class="results">
                         <h3>Résultats pour Employé 5</h3>
                         <div class="result-item">
@@ -915,7 +977,7 @@
                             <span id="statut5" class="badge warning">En cours</span>
                         </div>
                     </div>
-
+                    
                     <div class="history-section">
                         <h3><i class="fas fa-history"></i> Historique des baux</h3>
                         <div id="history5">
@@ -954,7 +1016,7 @@
                 <div class="total-result" id="performance-indicator">
                     Performance: En attente de données
                 </div>
-
+                
                 <div style="margin-top: 25px;">
                     <h3><i class="fas fa-calendar-alt"></i> Baux par jour</h3>
                     <div id="baux-par-jour">
@@ -1009,7 +1071,7 @@
         // Fonction pour enregistrer ou mettre à jour un bail
         function enregistrerBail(employeNum) {
             const employeKey = `employe${employeNum}`;
-
+            
             // Récupération des valeurs du formulaire
             const date = document.getElementById(`date${employeNum}`).value;
             const client = document.getElementById(`client${employeNum}`).value;
@@ -1021,13 +1083,13 @@
             const reductionMontant = calculerMontantReduction(ca, reductionPourcentage);
             const resilie = document.getElementById(`resilie${employeNum}`).checked;
             const valide = document.getElementById(`valide${employeNum}`).checked;
-
+            
             // Validation des champs obligatoires
             if (!date || !client || !interieur || !rue) {
                 alert('Veuillez remplir tous les champs obligatoires');
                 return;
             }
-
+            
             if (bailEnEdition) {
                 // Mise à jour d'un bail existant
                 const index = bauxData[employeKey].findIndex(b => b.id === bailEnEdition.id);
@@ -1047,7 +1109,7 @@
                         valide: valide,
                         statut: resilie ? 'Résilié' : (valide ? 'Validé' : 'En cours')
                     };
-
+                    
                     alert('Bail mis à jour avec succès !');
                 }
                 bailEnEdition = null;
@@ -1068,18 +1130,18 @@
                     valide: valide,
                     statut: resilie ? 'Résilié' : (valide ? 'Validé' : 'En cours')
                 };
-
+                
                 // Ajout au tableau des baux
                 bauxData[employeKey].push(bail);
                 alert('Bail enregistré avec succès !');
             }
-
+            
             // Mise à jour de l'historique
             afficherHistorique(employeNum);
-
+            
             // Mise à jour des totaux
             calculerTotaux();
-
+            
             // Réinitialisation du formulaire
             reinitialiserFormulaire(employeNum);
         }
@@ -1088,7 +1150,7 @@
         function modifierBail(employeNum, bailId) {
             const employeKey = `employe${employeNum}`;
             const bail = bauxData[employeKey].find(b => b.id === bailId);
-
+            
             if (bail) {
                 // Remplir le formulaire avec les données du bail
                 document.getElementById(`date${employeNum}`).value = bail.date;
@@ -1100,13 +1162,13 @@
                 document.getElementById(`reduction${employeNum}`).value = bail.reductionPourcentage;
                 document.getElementById(`resilie${employeNum}`).checked = bail.resilie;
                 document.getElementById(`valide${employeNum}`).checked = bail.valide;
-
+                
                 // Mettre à jour les résultats
                 calculerBenefice(employeNum);
-
+                
                 // Stocker le bail en cours d'édition
                 bailEnEdition = bail;
-
+                
                 // Faire défiler vers le formulaire
                 document.querySelector(`#employe${employeNum} .form-grid`).scrollIntoView({
                     behavior: 'smooth'
@@ -1119,13 +1181,13 @@
             if (confirm('Êtes-vous sûr de vouloir supprimer ce bail ?')) {
                 const employeKey = `employe${employeNum}`;
                 bauxData[employeKey] = bauxData[employeKey].filter(b => b.id !== bailId);
-
+                
                 // Mise à jour de l'historique
                 afficherHistorique(employeNum);
-
+                
                 // Mise à jour des totaux
                 calculerTotaux();
-
+                
                 alert('Bail supprimé avec succès !');
             }
         }
@@ -1135,12 +1197,12 @@
             const employeKey = `employe${employeNum}`;
             const historyElement = document.getElementById(`history${employeNum}`);
             const baux = bauxData[employeKey];
-
+            
             if (baux.length === 0) {
                 historyElement.innerHTML = '<div class="empty-history">Aucun bail enregistré pour le moment</div>';
                 return;
             }
-
+            
             let html = `
                 <table class="history-table">
                     <thead>
@@ -1156,11 +1218,11 @@
                     </thead>
                     <tbody>
             `;
-
+            
             baux.forEach(bail => {
                 const badgeClass = bail.statut === 'Validé' ? 'success' : 
                                  bail.statut === 'Résilié' ? 'danger' : 'warning';
-
+                
                 html += `
                     <tr>
                         <td>${formaterDate(bail.date)}</td>
@@ -1182,7 +1244,7 @@
                     </tr>
                 `;
             });
-
+            
             html += '</tbody></table>';
             historyElement.innerHTML = html;
         }
@@ -1198,14 +1260,14 @@
             document.getElementById(`reduction${employeNum}`).value = '0';
             document.getElementById(`resilie${employeNum}`).checked = false;
             document.getElementById(`valide${employeNum}`).checked = false;
-
+            
             // Réinitialiser les résultats
             document.getElementById(`ca-result${employeNum}`).textContent = '0 $';
             document.getElementById(`reduction-result${employeNum}`).textContent = '0 $ (0%)';
             document.getElementById(`benefice${employeNum}`).textContent = '0 $';
             document.getElementById(`statut${employeNum}`).textContent = 'En cours';
             document.getElementById(`statut${employeNum}`).className = 'badge warning';
-
+            
             // Réinitialiser le bail en édition
             bailEnEdition = null;
         }
@@ -1216,17 +1278,17 @@
             const reductionPourcentage = parseFloat(document.getElementById(`reduction${employeNum}`).value) || 0;
             const reductionMontant = calculerMontantReduction(ca, reductionPourcentage);
             const benefice = ca - reductionMontant;
-
+            
             // Mise à jour des résultats
             document.getElementById(`ca-result${employeNum}`).textContent = ca.toFixed(2) + ' $';
             document.getElementById(`reduction-result${employeNum}`).textContent = reductionMontant.toFixed(2) + ' $ (' + reductionPourcentage.toFixed(1) + '%)';
             document.getElementById(`benefice${employeNum}`).textContent = benefice.toFixed(2) + ' $';
-
+            
             // Mise à jour du statut
             const resilie = document.getElementById(`resilie${employeNum}`).checked;
             const valide = document.getElementById(`valide${employeNum}`).checked;
             const statutElement = document.getElementById(`statut${employeNum}`);
-
+            
             if (resilie) {
                 statutElement.textContent = "Résilié";
                 statutElement.className = "badge danger";
@@ -1247,7 +1309,7 @@
             let bauxValides = 0;
             let bauxResilies = 0;
             let totalBaux = 0;
-
+            
             // Calcul des totaux par employé
             for (let i = 1; i <= 5; i++) {
                 const employeKey = `employe${i}`;
@@ -1256,12 +1318,12 @@
                     totalReduction += bail.reductionMontant;
                     totalBenefice += bail.benefice;
                     totalBaux++;
-
+                    
                     if (bail.valide) bauxValides++;
                     if (bail.resilie) bauxResilies++;
                 });
             }
-
+            
             // Mise à jour des totaux affichés
             document.getElementById('total-ca').textContent = totalCA.toFixed(2) + ' $';
             document.getElementById('total-reduction').textContent = totalReduction.toFixed(2) + ' $';
@@ -1269,10 +1331,10 @@
             document.getElementById('baux-valides').textContent = bauxValides;
             document.getElementById('baux-resilies').textContent = bauxResilies;
             document.getElementById('total-baux').textContent = totalBaux;
-
+            
             // Calcul des baux par jour
             afficherBauxParJour();
-
+            
             // Indicateur de performance
             const performanceIndicator = document.getElementById('performance-indicator');
             if (totalCA === 0) {
@@ -1293,7 +1355,7 @@
         function afficherBauxParJour() {
             const bauxParJourElement = document.getElementById('baux-par-jour');
             const bauxParJour = {};
-
+            
             // Compter les baux par date
             for (let i = 1; i <= 5; i++) {
                 const employeKey = `employe${i}`;
@@ -1304,12 +1366,12 @@
                     bauxParJour[bail.date]++;
                 });
             }
-
+            
             if (Object.keys(bauxParJour).length === 0) {
                 bauxParJourElement.innerHTML = '<div style="text-align: center; padding: 15px; color: rgba(255,255,255,0.7);">Aucune donnée disponible</div>';
                 return;
             }
-
+            
             let html = '';
             Object.keys(bauxParJour).sort().forEach(date => {
                 html += `
@@ -1319,7 +1381,7 @@
                     </div>
                 `;
             });
-
+            
             bauxParJourElement.innerHTML = html;
         }
 
@@ -1330,7 +1392,7 @@
             for (let i = 1; i <= 5; i++) {
                 document.getElementById(`date${i}`).value = today;
             }
-
+            
             // Écouteurs pour les champs de saisie
             for (let i = 1; i <= 5; i++) {
                 document.getElementById(`ca${i}`).addEventListener('input', () => calculerBenefice(i));
@@ -1338,24 +1400,24 @@
                 document.getElementById(`resilie${i}`).addEventListener('change', () => calculerBenefice(i));
                 document.getElementById(`valide${i}`).addEventListener('change', () => calculerBenefice(i));
             }
-
+            
             // Gestion des onglets
             document.querySelectorAll('.tab').forEach(tab => {
                 tab.addEventListener('click', () => {
                     // Désactiver tous les onglets
                     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
                     document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-
+                    
                     // Activer l'onglet cliqué
                     tab.classList.add('active');
                     document.getElementById(tab.dataset.tab).classList.add('active');
-
+                    
                     // Afficher l'historique de l'employé sélectionné
                     const employeNum = tab.dataset.tab.replace('employe', '');
                     afficherHistorique(employeNum);
                 });
             });
-
+            
             // Initialiser les totaux
             calculerTotaux();
         });
